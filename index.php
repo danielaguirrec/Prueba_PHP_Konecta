@@ -10,8 +10,12 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+        
+        <h1>MVC</h1>
+        
         <?php
-        echo "primer push";
+            require_once("./CONTROLADOR/productosControlador.php");
+       
         ?>
     </body>
 </html>
