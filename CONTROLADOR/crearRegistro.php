@@ -15,7 +15,6 @@
      echo $nombre;
     $producto->insertarRegistro($nombre, $referencia, $precio, $peso, $categoria,$stock,$fecha,$fecha);
 
-     require_once '../VISTA/actualizarExitoso.php';
-        echo"<h1>esta mierda no da</h1>";        
-        header("Location: ../index.php");
+     require_once '../VISTA/actualizarExitoso.php';       
+        header("Location: ../index.php?crear=1");
         ?>

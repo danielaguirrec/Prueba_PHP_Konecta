@@ -17,13 +17,13 @@ and open the template in the editor.
 }</style>
         <h2>Creando Registro</h2>
         <form action ="./CONTROLADOR/crearRegistro.php" method="post">      
-        <label> Nombre del producto: </label> <input type="text" name="nombre"><br><br>  
-        <label> Referencia: </label> <input type="text" name="referencia"> <br><br>  
-        <label> Precio: </label> <input type="number" name="precio"><br> <br>        
-        <label> Peso: </label> <input type="number" name="peso"><br><br>  
-        <label> Categoria: </label> <input type="text" name="categoria"><br><br>  
-        <label> Stock: </label> <input type="number" name="stock"><br><br>  
-        <label> Fecha Creacion: </label> <input type="text" name="fecha"><br><br>  
+        <label> Nombre del producto: </label> <input type="text" name="nombre" required><br><br>  
+        <label> Referencia: </label> <input type="text" name="referencia" required> <br><br>  
+        <label> Precio: </label> <input type="number" name="precio" required><br> <br>        
+        <label> Peso: </label> <input type="number" name="peso" required><br><br>  
+        <label> Categoria: </label> <input type="text" name="categoria" required><br><br>  
+        <label> Stock: </label> <input type="number" name="stock" required><br><br>  
+        <label> Fecha Creacion: </label> <input type="text" name="fecha" required><br><br>  
         
         <input  type="submit" name ="enviado" value="Enviar">
 

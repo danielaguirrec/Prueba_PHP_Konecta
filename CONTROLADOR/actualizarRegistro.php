@@ -14,12 +14,17 @@
      $categoria = $_POST['categoria'];
      $stock = $_POST['stock'];
      $fecha = date('Y:m:d');
+     
+     if(isset($_POST['actualizar'])){
+         
+         echo"<h1> Registro Actualizado</h1>";
+     }
 
 
  
     $producto->actualizarRegistro($id, $nombre, $referencia, $precio, $peso, $categoria,$stock,$fecha,$fecha);
-       sleep(3);
-        require_once '../VISTA/actualizarExitoso.php';
+
+        //require_once '../VISTA/actualizarExitoso.php?actualizar=1';
         echo"<h1>esta mierda no da</h1>";        
-        header("Location: ../index.php");
+        header("Location: ../index.php?actualizar=1");
         ?>

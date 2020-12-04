@@ -40,10 +40,9 @@ class Productos_modelo{
      $stock = $stock1;
      $fecha = $fecha1;
      $fecha = $fecha2;
-     $id = 2; 
      $fecha = date('Y-m-d', strtotime(str_replace('-', '/', $fecha)));
-     $sql ="INSERT INTO inventario.productos (Nombre_de_producto, Referencia, Precio, Peso, Categoria, Stock,Fecha_de_Creacion, Fecha_de_ultima_venta)"
-     ."VALUES ($nombre, $referencia, $precio, $peso, $categoria, $stock, $fecha, $fecha)";
+     $sql ="INSERT INTO inventario.productos(Nombre_de_producto, Referencia, Precio, Peso, Categoria, Stock,Fecha_de_Creacion, Fecha_de_ultima_venta) VALUES ($nombre, $referencia, $precio, $peso, $categoria, $stock, $fecha, $fecha)";
+   
  
        $consulta=$this->db->query($sql);
         $this->db = null;
@@ -68,14 +67,20 @@ class Productos_modelo{
         $fecha = date('Y-m-d', strtotime(str_replace('-', '/', $fecha)));
         
         
-        $sql = "UPDATE inventario.productos SET Nombre_de_producto = $nombre, Referencia=$referencia, Precio=$precio, Peso=$peso, Categoria= $categoria, Stock=$stock,Fecha_de_Creacion=$fecha,Fecha_de_ultima_venta=$fecha   WHERE id = $id";
+        $sql = "UPDATE inventario.productos SET Nombre_de_producto = $nombre, Referencia=$referencia, Precio=$precio, Peso=$peso, Categoria= $categoria, Stock=$stock,Fecha_de_Creacion=$fecha,Fecha_de_ultima_venta=$fecha WHERE id = $id";
           $consulta=$this->db->query($sql);
           
           $this->db = null;
-          
+
+    }
+    public function eliminarRegistro($id1){
+         $id = $id1;
+         $sql = "DELETE FROM inventario.productos WHERE id=$id";
+         $consulta=$this->db->query($sql);  
+         
+         echo"ELIMINO EXITOSO";
+         $this->db = null;
         
- 
-    
     }
     
     

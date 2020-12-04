@@ -51,6 +51,21 @@ and open the template in the editor.
                 require_once("./VISTA/formActualizar.html");
 
             }
+            
+            if(isset($_POST['eliminar'])){              
+                require_once("./VISTA/formEliminar.html");
+            }
+            if(isset($_GET['crear'])){
+                echo "<h2>Registro creado!</h2>";
+            }
+            
+              if(isset($_GET['eliminar'])){
+                echo "<h2>Registro eliminado!</h2>";
+            }
+            
+              if(isset($_GET['actualizar'])){
+                echo "<h2>Registro actualizado!</h2>";
+            }
         ?>
     </body>
 </html>
