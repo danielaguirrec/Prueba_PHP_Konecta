@@ -8,10 +8,21 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <style>
+            input.text, select.text, textarea.text {
+   background: silver;
+   border: 1px solid #393939;
+   border-radius: 5px 5px 5px 5px;
+   color: #393939;
+   font-size: 12px;
+   padding: 5px;
+}
+            
+        </style>
     </head>
     <body>
         
-        <h1>MVC</h1>
+        <h1>CRUD MVC</h1>
         
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <input type = "submit" name ="crear" value ="Crear Registro"></form> <br>
@@ -21,25 +32,25 @@ and open the template in the editor.
             
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
            <input type = "submit" name ="eliminar" value ="Eliminar Registro"></form> <br>
-
-        <a href="formActualizar.php"><button> Actualizar registro</button></a><br><br>
-
-        
+           
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <input type = "submit" name ="listar" value ="Listar Registro"></form> <br>
+    
         <?php
-            require_once("./CONTROLADOR/productosControlador.php");
+             if(isset($_POST['listar'])){              
+                require_once("./CONTROLADOR/productosControlador.php");
+            }
             
             if(isset($_POST['crear'])){              
                 require_once("./VISTA/formCrear.html");
             }
             
-             require_once("./CONTROLADOR/productosControlador.php");
+            // require_once("./CONTROLADOR/productosControlador.php");
             
             if(isset($_POST['actualizar'])){              
                 require_once("./VISTA/formActualizar.html");
+
             }
-            
-       
-       
         ?>
     </body>
 </html>

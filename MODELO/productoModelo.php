@@ -38,23 +38,15 @@ class Productos_modelo{
      $peso = $peso1;
      $categoria = $categoria1;
      $stock = $stock1;
-     
      $fecha = $fecha1;
      $fecha = $fecha2;
-        $id = 2;
-        
-        $fecha = date('Y-m-d', strtotime(str_replace('-', '/', $fecha)));
-     
-                                                           //  $consulta=$this->db->query("SELECT * FROM inventario.productos");
-                                                             
-     /*$sql ="INSERT INTO inventario.productos (Nombre_de_producto, Referencia, Precio, Peso, Categoria, Stock, Fecha_de_Creacion, Fecha_de_ultima_venta)".
-             "VALUES (:nombre, :referencia, :precio, :peso, :categoria, :stock, :fecha1, :fecha2)";*/
-     
-       $sql ="INSERT INTO inventario.productos (Nombre_de_producto, Referencia, Precio, Peso, Categoria, Stock,Fecha_de_Creacion, Fecha_de_ultima_venta)".
-             "VALUES ( $nombre, $referencia, $precio, $peso, $categoria, $stock, $fecha, $fecha)";
-       
-       
+     $id = 2; 
+     $fecha = date('Y-m-d', strtotime(str_replace('-', '/', $fecha)));
+     $sql ="INSERT INTO inventario.productos (Nombre_de_producto, Referencia, Precio, Peso, Categoria, Stock,Fecha_de_Creacion, Fecha_de_ultima_venta)"
+     ."VALUES ($nombre, $referencia, $precio, $peso, $categoria, $stock, $fecha, $fecha)";
+ 
        $consulta=$this->db->query($sql);
+        $this->db = null;
        echo "INSERCION EXITOSA";
  
     
@@ -72,21 +64,16 @@ class Productos_modelo{
      $fecha = $fecha1;
      $fecha = $fecha2;
      $id = $id1;
-        
+        echo $fecha;
         $fecha = date('Y-m-d', strtotime(str_replace('-', '/', $fecha)));
         
         
-          /*  $sql ="UPDATE inventario.productos SET (Nombre_de_producto=$nombre, Referencia, Precio, Peso, Categoria, Stock,Fecha_de_Creacion, Fecha_de_ultima_venta)".
-             "VALUES ( $nombre, $referencia, $precio, $peso, $categoria, $stock, $fecha, $fecha)";*/
-     
-
-     
-       $sql =" UPDATE inventario.productos SET (Nombre_de_producto=$nombre, Referencia=$referencia, Precio=$precio, Peso=$peso, Categoria= $categoria,"
-               . "Stock=$stock,Fecha_de_Creacion=$fecha, Fecha_de_ultima_venta=$fecha )".
-            " WHERE id = $id".";";
-       
-       
-       $consulta=$this->db->query($sql);
+        $sql = "UPDATE inventario.productos SET Nombre_de_producto = $nombre, Referencia=$referencia, Precio=$precio, Peso=$peso, Categoria= $categoria, Stock=$stock,Fecha_de_Creacion=$fecha,Fecha_de_ultima_venta=$fecha   WHERE id = $id";
+          $consulta=$this->db->query($sql);
+          
+          $this->db = null;
+          
+        
  
     
     }
