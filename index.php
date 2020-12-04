@@ -32,6 +32,12 @@ and open the template in the editor.
                 require_once("./VISTA/formCrear.html");
             }
             
+             require_once("./CONTROLADOR/productosControlador.php");
+            
+            if(isset($_POST['actualizar'])){              
+                require_once("./VISTA/formActualizar.html");
+            }
+            
        
        
         ?>
